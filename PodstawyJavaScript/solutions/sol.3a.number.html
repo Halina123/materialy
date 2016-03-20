@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>3a.Number</title>
+</head>
+<body>
+
+<div id="komunikaty"></div>
+
+<script>
+	/* Zawartość pliku helper.js*/
+	function append(text) {
+		document.getElementById('komunikaty').innerHTML += text + '<br/>'
+	}
+
+	function getById(id){
+		return document.getElementById(id);
+	}
+
+	function getByClass(className) {
+		return document.getElementsByClassName(className);
+	}
+
+	function maxOfThree(num1, num2, num3)
+	{
+		return Math.max(
+			Number.parseFloat(num1),
+			Number.parseFloat(num2),
+			Number.parseFloat(num3)
+		);
+	}
+
+</script>
+
+<script>
+
+	/*******************************/
+	/*
+
+	 1. Dodaj plik objHelper do tego dokumentu.
+
+	 2. Dodaj do niego funkcję maxOfThree => function maxOfThree(v1, v2, v3)
+
+	 Funkcja ma zwracać największą z podanych wartości.
+
+	 Na wejściu funkcji mogą pojawić się wartości w formacie string
+	 	oraz wartości niecałkowite.
+
+
+	 Sprawdź poprawność metody wypisując na ekranie (metoda lib.append) wynik zapytań:.
+
+		 lib.maxOfThree(-2,10,0.3)			=> powinno dać 10
+		 lib.maxOfThree(-2,10,'12.3aa')		=> powinno dać 12.3
+		 lib.maxOfThree(0.0,-10,'-12.3')	=> powinno dać 0
+
+	 */
+
+	append(maxOfThree(-2, 10, 0.3));
+	append(maxOfThree(-2, 10, '12.3aa'));
+	append(maxOfThree(0.0, -10, '-12.3'));
+
+</script>
+
+</body>
+</html>

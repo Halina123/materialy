@@ -1,0 +1,16 @@
+body {
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+p {
+    font-size: 18px;
+}
+
+span {
+    color: red;
+    font-size: 11px;
+    font-weight: bold;
+}

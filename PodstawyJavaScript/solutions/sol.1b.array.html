@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title> 1b.array </title>
+</head>
+<body>
+
+<a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">Dokumentacja Array</a>
+
+<p class="isa-output" id="p-first">P1 </p>
+<p class="isa-output">P2 </p>
+<p class="isa-output">P3 </p>
+<p class="isa-output">P4 </p>
+<p class="isa-output">P5 </p>
+
+<div id="komunikaty"></div>
+
+<script>
+
+	/* Zawartość pliku helper.js*/
+	function append(text) {
+		document.getElementById('komunikaty').innerHTML += text + '<br/>'
+	}
+
+	function getById(id){
+		return document.getElementById(id);
+	}
+
+	function getByClass(className) {
+		return document.getElementsByClassName(className);
+	}
+
+</script>
+
+<script>
+
+
+	/*******************************/
+	/*
+	 0. Dodaj plik helper.js do tego dokumentu html
+
+	 1. Do pliku helper.js dodaj funkcję getById(id)
+
+	 Funkcja getById ma zwracać element o id podanym w parametrze
+	 Użyj tej funkcji aby wypisać na konsolę zawartość elementu o id 'p-first'
+
+	 2. Do pliku helper.js dodaj funkcję getByClass(className)
+
+	 Funkcja getByClass na zwracać wszystkie elementy posiadające wskazaną klasę.
+
+	 3. Użyj funkcji aby znaleźc elementy z klasa 'isa-output'.
+
+	 4. Przeiteruj przez wszystkie elementy i do każdego
+	 dopisz swoje imię
+
+	 */
+
+
+
+	console.log(getById('p-first').innerHTML);
+
+	var pars = getByClass('isa-output');
+	for (var i = 0; i < pars.length ; i++) {
+		pars[i].innerHTML += ' Nabuhodonozor';
+	}
+
+</script>
+
+</body>
+</html>

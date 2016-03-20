@@ -1,0 +1,45 @@
+<!--
+
+1. Przygotować formatowanie elementów poziom-1 jako obramowane bloki, z marginesem dolnym 10px, o kolorze tła #f1f1f1; "> li"
+2. Przygotować formatowanie elementów poziom-2 jako elementy z pochylonym tekstem
+3. Element o identyfikatorze "element-1" powiniem mieć czerwone tło oraz biały kolor tekstu
+4. "element-aktywny" powinien zmienić kolor tła na zielony przy najechaniu na niego myszką
+5. Po najechaniu na element "element-aktywny" jego pierwsze dziecko typu span powinno zmienić wagę czcionki na pogrubioną
+
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="simple example of html">
+    <meta name="author" content="infoShare Academy">
+    <meta name="keywords" content="infoshare, academy">
+    <title>cw-css-10</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="styles/reset.css" />
+
+    <link rel="stylesheet" href="styles/cw-css-10.css" />
+
+
+</head>
+    <body>
+        <div>
+            <div class="poziom-1">
+                <div class="poziom-2" id="element-1"></div>
+            </div>
+            <div class="poziom-1">
+                <div class="poziom-2"></div>
+            </div>
+            <div class="poziom-1">
+                <div class="poziom-2 element-aktywny">
+                    <span>Tekst pierwszy</span>
+                    <span>Tekst drugi</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

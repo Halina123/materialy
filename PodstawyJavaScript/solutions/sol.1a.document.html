@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title> 1a.document </title>
+</head>
+<body>
+
+<p class="isa-output" id="p-first">P1 </p>
+<p class="isa-output">P2 </p>
+<p class="isa-output">P3 </p>
+<p class="isa-output">P4 </p>
+<p class="isa-output">P5 </p>
+
+<div id="komunikaty"></div>
+
+<script>
+
+	/* Zawartość pliku helper.js*/
+	function append(text) {
+		document.getElementById('komunikaty').innerHTML += text + '<br/>'
+	}
+
+</script>
+
+<script>
+	/*******************************/
+	/*
+	 1. Dodaj plik helper.js do tego dokumentu
+
+	 2. Dopisz do pliku funkcję append(text), która będzie dopisywać do
+	 diva o id 'komunikaty' przekazany przez parametr tekst.
+
+	 3. Użyj metody append aby wypisać na stronie swoje imię.
+
+	 */
+	/*******************************/
+
+	append('Pawel');
+
+</script>
+
+</body>
+</html>

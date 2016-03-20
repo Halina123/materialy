@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>2b</title>
+</head>
+<body>
+
+<p id="message-box"></p>
+
+<script src="../js/2.helper.js"></script>
+
+<script>
+
+
+	/* Napisz kod, który przywita użytkownika na stronie w jego języku
+	*  Obsługujemy polski, niemiecki i angielski.
+	*  Jeżeli język jest inny niż powyższe przywitaj go po angielsku
+	*
+	*  -- WAŻNE --
+	*  -- Masz do dyspozycji funkcję showMsg(komunikat), która wypisuje komunikat na ekranie --
+	*  -----------
+	* */
+
+	var lang = 'pl';
+
+	if (lang === 'pl') {
+		showMsg('Witaj!');
+	}
+	else if (lang === 'de') {
+		showMsg('Gutten Tag');
+	}
+	else {
+		showMsg('Hello');
+	}
+
+
+</script>
+
+
+
+</body>
+</html>

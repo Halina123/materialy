@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REST API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/jquery.rest.min.js"></script>
+    <script src="blogger.js"></script>
+</head>
+<body>
+
+<form class="form-ho">
+    <div class="form-group">
+        <label for="postTitle" class="control-label">Tytuł posta:</label>
+        <input type="text" name="title" id="postTitle" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="postBody" class="control-label">Treść posta:</label>
+        <textarea name="body" id="postBody" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default" onclick="addPost();return false;">Dodaj post</button>
+</form>
+
+<pre id="comments"></pre>
+
+</body>
+</html>

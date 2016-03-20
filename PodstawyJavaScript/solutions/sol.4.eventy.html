@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title> 4.eventy </title>
+
+	<style>
+		.isa-output {
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			background-color: beige;
+		}
+
+		.active {
+			background-color: red;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="isa-output">item 1</div>
+<div class="isa-output">item 2</div>
+<div class="isa-output">item 3</div>
+
+<div id="komunikaty"></div>
+
+<script>
+	/* Zawartość pliku helper.js*/
+	function append(text) {
+		document.getElementById('komunikaty').innerHTML += text + '<br/>'
+	}
+
+	function getById(id){
+		return document.getElementById(id);
+	}
+
+	function getByClass(className) {
+		return document.getElementsByClassName(className);
+	}
+
+	function maxOfThree(num1, num2, num3)
+	{
+		return Math.max(
+				Number.parseFloat(num1),
+				Number.parseFloat(num2),
+				Number.parseFloat(num3)
+		);
+	}
+
+	function repeat(text, count) {
+		var output = '';
+		var txt = text.toString().trim().toLowerCase();
+		for (var i = 0; i < count; i++) {
+			output += txt;
+		}
+		return output;
+	}
+
+</script>
+
+<script>
+
+	/*******************************/
+	/*
+	 Dane są trzy divy reprezentujące elementy menu. Każdy znich ma nałożoną klasę 'isa-output'
+
+	 Napisz kawałek kodu, który po najechaniu kursorem na element zmieni jego tło na czerwone
+	 - zwróć uwagę, że dana jest też klasa .active
+
+	 Po wyjechaniu kursorem poza diva kolor tła diva ma wrócić do koloru wyjściowego.
+
+	 Pamiętaj o metodach z obiektu lib.
+
+	 -------
+
+	 Zdarzenia HTML:
+	 - mouseenter
+	 - mouseleave
+
+	 /*******************************/
+
+	function setClasses(container, classes) {
+		container.setAttribute('class', classes);
+	}
+
+	var items = getByClass('isa-output');
+
+	for (var i = 0; i < items.length; i++) {
+
+		items[i].addEventListener('mouseenter',
+				function () {
+					setClasses(this, 'isa-output active')
+				}
+		);
+		items[i].addEventListener('mouseleave',
+				function () {
+					setClasses(this, 'isa-output')
+				}
+		);
+
+	}
+
+</script>
+
+</body>
+</html>

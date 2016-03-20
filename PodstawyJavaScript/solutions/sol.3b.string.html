@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>3b.String</title>
+</head>
+<body>
+
+<div id="komunikaty"></div>
+
+<script>
+	/* Zawartość pliku helper.js*/
+	function append(text) {
+		document.getElementById('komunikaty').innerHTML += text + '<br/>'
+	}
+
+	function getById(id){
+		return document.getElementById(id);
+	}
+
+	function getByClass(className) {
+		return document.getElementsByClassName(className);
+	}
+
+	function maxOfThree(num1, num2, num3)
+	{
+		return Math.max(
+				Number.parseFloat(num1),
+				Number.parseFloat(num2),
+				Number.parseFloat(num3)
+		);
+	}
+
+	function repeat(textDoSklonowania, liczbaPowtorzen) {
+
+		var textWynikowy = '';
+
+		//
+		//  funkcje toString(), trim() oraz toLowerCase() nie działają w miejscu:
+		// 		- nie modyfikują obiektu, na którym zostały uruchomione,
+		// 		- zwracają zmodyfikowany text
+		//
+
+		// uruchomienie funkcji toString() zagwarauntuje nam, że w zmiennej
+		// 		przetworzonyText będzie znajdować się wartość textowa.
+
+		var przetworzonyText = textDoSklonowania.toString();
+
+		// usuwamy białe znaki z końca i początku textu
+		przetworzonyText = przetworzonyText.trim();
+
+		//zamieniamy text na małe znaki
+		przetworzonyText = przetworzonyText.toLowerCase();
+
+		// tyle razy ile mamy podane w zmiennej liczbaPowtorzen doklejamy
+		//		wartość zmiennej przetworzonyText to zmiennej textWynikowy
+		for (var i = 0; i < liczbaPowtorzen; i++) {
+			textWynikowy += przetworzonyText;
+		}
+		return textWynikowy;
+	}
+
+</script>
+
+<script>
+
+	//  Pełna dokumentacja metod obiektu string
+	//	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2
+
+	/*******************************/
+	/*
+
+	 1. Dodaj plik objHelper do tego dokumentu.
+
+	 2. Dodaj do niego funkcję maxOfThree => function repeat(str, count)
+
+	 Jeżeli parametr str będzie wartością numeryczną, należy zamienić go na wartość textową.
+
+	 Funkcja ma usuwać białe znaki z początku i końca parametru str.
+
+	 Funkcja ma sklejać parametr str tyle razy ile podano w parametrze count
+
+	 Powstały string ma być zamieniony na małe litery i zwrócony
+
+
+
+	 3. Na ekranie wyświetl (lib.append) wynik następujących wołań:
+	 repeat('   oN*e ', 3);			=>	on*eon*eon*e
+	 repeat(' TWO-2   ', 2);		=>	two-2two-2
+	 repeat(33, 3);					=>	333333
+	 */
+
+	append(repeat(33, 3));
+	append(repeat('   oN*e ', 3));
+	append(repeat(' TWO-2   ', 2));
+
+</script>
+
+</body>
+</html>

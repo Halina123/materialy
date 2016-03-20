@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<style>
+	.ppl-card {
+		display: inline-block;
+		background-color: beige;
+		margin: 5px;
+		width: 100px;
+	}
+
+	.ppl-firstName, .ppl-lastName {
+		margin: 2px;
+		font-size: large;
+	}
+
+	.ppl-age, .ppl-gender {
+		margin: 2px;
+		font-size: small;
+		color: grey;
+	}
+
+</style>
+
+<body>
+
+<script src="js/people.js"></script>
+
+<script>
+	/*******************************/
+	/*
+
+	 Dana jest tablice people (zawarta jest w pliku js/people.js
+	 Tablica ta zawiera obiekty z danymi osobowymi grupy osób.
+
+	 Napisz kod, który wyświetli te dane w tym dokumencie w atrakcyjny sposób.
+	 Możesz użyć dodanych do dokumentu styli.
+
+	 Wyświetl pola firstName, lastName, gender oraz age.
+
+	 Należy pokazać dane tylko tych osób, których wiek jest równy lub wyższy niż wartość
+	 zmiennej minAge.
+
+	 */
+	/*******************************/
+
+	var minAge = 30;
+
+
+	function createCard(konkretnaOsoba) {
+		// funkcja przyjmuje obiekt definiujący konkretną osobę.
+		// Aby dostać się do wartości opisujących tę osobę używamy kropek.
+		// Zwracamy z funkcji dynamicznie skonstruowanego HTMLa
+		//
+		// W nagłówku dokument head mamy zdefiniowane klasy, których używamy w tym htmlu.
+		return '<div class="ppl-card">' +
+					'<div class="ppl-firstName">' + konkretnaOsoba.firstName + '</div>' +
+					'<div class="ppl-lastName">' + konkretnaOsoba.lastName + '</div>' +
+					'<div class="ppl-age">' + konkretnaOsoba.age + '</div>' +
+					'<div class="ppl-gender">' + konkretnaOsoba.gender + '</div>' +
+				'</div>';
+	}
+
+	var osoba;
+
+	// Tablica people znajduje się w pliku js/people.js
+	// W tablicy people znajdują się obiekty, opisujące osoby.
+	// iterujemy przez każdy element tablicy poeple.
+	//
+	// Ta pętla wykona się tyle razy ile jest osób w tablicy people. (tj. będize miała tyle przebiegów
+	// ile jest osób w tablicy people
+	for (var i = 0; i < people.length ; i++) {
+		// dla uproszczenia przypisujemy bieżącą (tj. odpowiednią dla bieżącego przebiegu pętli)
+		// osobę do zmiennej osoba
+		osoba = people[i];
+
+		// jeżeli wiek bieżącej osoby jest mniejszy niż wartość wieku określona w zmiennej minAge
+		// to kończymy ten przebieg pętli
+		if (osoba.age < minAge)
+			continue;
+
+		// dodajemy do dokumentu kawałek HTMLa, który tworzony jest w funkcji createCard().
+		// Do tej funkcji przekazujemy bieżącą osobę
+		document.body.innerHTML += createCard(osoba);
+	}
+
+</script>
+
+</body>
+
+</html>
